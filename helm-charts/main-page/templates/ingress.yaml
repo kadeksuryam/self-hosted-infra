@@ -1,0 +1,34 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Values.environment }}
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: www.kadeksuryam.dev
+      http:
+        paths:
+          - pathType: Prefix
+            backend:
+              service:
+                name: {{ .Release.Name }}
+                port:
+                  number: 80
+            path: /
+    - host: kadeksuryam.dev
+      http:
+        paths:
+          - pathType: Prefix
+            backend:
+              service:
+                name: {{ .Release.Name }}
+                port:
+                  number: 80
+            path: /
+  tls:
+    - hosts:
+      - www.kadeksuryam.dev
+      - kadeksuryam.dev
+      secretName: cloudflare-tls-cert
+

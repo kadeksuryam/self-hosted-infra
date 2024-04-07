@@ -1,0 +1,5 @@
+k3s/secrets/*
+
+!k3s/secrets/public-age-keys.yaml
+!k3s/secrets/*.enc.yaml
+!k3s/secrets/*.sh

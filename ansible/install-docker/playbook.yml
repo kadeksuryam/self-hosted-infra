@@ -1,0 +1,9 @@
+---
+- name: Setup Wireguard VPN
+  hosts: all
+  become: true
+  tasks:
+    - name: Update-Install apt packages 
+      ansible.builtin.import_tasks: tasks/apt.yml
+    - name: Install Docker
+      ansible.builtin.import_tasks: tasks/install-docker.yml

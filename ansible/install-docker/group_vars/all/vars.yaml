@@ -1,0 +1,31 @@
+---
+username: kadeksuryam
+
+apt_packages:
+  - curl
+  - git
+  - build-essential
+
+docker_conflicting_packages:
+  - docker.io
+  - docker-doc
+  - docker-compose
+  - docker-compose-v2
+  - podman-docker
+  - containerd
+  - runc
+
+docker_dependencies:
+  - ca-certificates
+  - curl
+
+docker_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-buildx-plugin
+  - docker-compose-plugin
+
+docker_services:
+  - docker.service
+  - containerd.service

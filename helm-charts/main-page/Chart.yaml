@@ -1,0 +1,5 @@
+apiVersion: v2
+name: about-me
+description: A Helm chart for about me page
+type: application 
+version: 0.1.0
