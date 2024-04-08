@@ -1,0 +1,1 @@
+helm upgrade argo argo/argo-cd --install --namespace prod --values values.yaml --set server.ingress.annotations."nginx\.ingress\.kubernetes\.io/whitelist-source-range"=$CIDR
